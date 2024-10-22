@@ -3,6 +3,7 @@ import { getPost, Post } from "@/utils/posts.ts";
 import { CSS, render } from "jsr:@deno/gfm";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
+//import { Renderer } from "./renderer.ts"
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -30,7 +31,9 @@ export default function PostPage(props: PageProps<Post>) {
           })}
         </time>
         <div
-          class="mt-8 markdown-body"
+          data-color-mode="dark"
+          data-dark-theme="dark"
+          class="markdown-body"
           dangerouslySetInnerHTML={{ __html: render(post.content) }}
         />
       </main>

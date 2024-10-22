@@ -1,5 +1,4 @@
-import { Handlers } from "$fresh/server.ts";
-import { PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { getPosts, Post } from "@/utils/posts.ts";
 
 export const handler: Handlers<Post[]> = {
@@ -36,7 +35,7 @@ function PostCard(props: { post: Post }) {
             day: "numeric",
           })}
         </time>
-        <div class="mt-4 text-gray-900">
+        <div class="mt-4 text-gray-200">
           {post.snippet}
         </div>
       </a>
