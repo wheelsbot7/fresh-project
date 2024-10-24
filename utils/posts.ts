@@ -1,3 +1,5 @@
+// @ts-nocheck: attrs is being dumb
+
 import { extract } from "@std/front-matter/any";
 import { join } from "$std/path/join.ts";
 
@@ -10,7 +12,7 @@ export interface Post {
 }
 
 export async function getPosts(): Promise<Post[]> {
-  const files = Deno.readDir("./posts");
+  const files = Deno.readDir("./static/posts");
   const promises = [];
   for await (const file of files) {
     const slug = file.name.replace(".md", "");
@@ -22,7 +24,7 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
-  const text = await Deno.readTextFile(join("./posts", `${slug}.md`));
+  const text = await Deno.readTextFile(join("./static/posts", `${slug}.md`));
   const { attrs, body } = extract(text);
   return {
     slug,

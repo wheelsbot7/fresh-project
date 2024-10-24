@@ -28,3 +28,8 @@
   word-wrap: break-word;
   scroll-behavior: auto !important;
 }
+
+.ridge {
+  border-style: ridge;
+  padding: 10px;
+}

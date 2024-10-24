@@ -11,9 +11,9 @@ export const handler: Handlers<Post[]> = {
 export default function BlogIndexPage(props: PageProps<Post[]>) {
   const posts = props.data;
   return (
-    <main class="max-w-3xl px-4 pt-16 mx-auto">
-      <div class="border-x-sky-700">
-        <h1 class="text-5xl font-bold border-solid border-sky-400 border-4 text-white">
+    <main class="max-w-3xl px-4 pt-16 mx-auto border-dashed border-x-4 border-sky-400">
+      <div>
+        <h1 class="text-5xl font-bold border-solid border-x-4 border-sky-400 text-white p-3">
           Blog
         </h1>
         <div class="mt-8">
@@ -27,9 +27,9 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
 function PostCard(props: { post: Post }) {
   const { post } = props;
   return (
-    <div class="py-8 border-gray-200)">
+    <div class="py-8 border-solid border-rose-500 border-8 ridge">
       <a class="sm:col-span-2" href={`/${post.slug}`}>
-        <h3 class="text-gray-100 font-bold border-solid hover:border-dashed border-rose-500 border-4">
+        <h3 class="text-gray-100 font-bold">
           {post.title}
         </h3>
         <time class="text-sky-400">
